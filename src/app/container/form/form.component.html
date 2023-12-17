@@ -1,0 +1,7 @@
+<form [formGroup]="bdForm" (ngSubmit)="onSubmit(bdForm)">
+
+  <app-input [control]="bdForm.controls['day']"></app-input>
+  <app-input [control]="bdForm.controls['month']"></app-input>
+  <app-input [control]="bdForm.controls['year']"></app-input>
+  <button type="submit">Submit</button>
+</form>
