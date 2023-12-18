@@ -30,3 +30,8 @@ body {
   background-color: var(--color-neutral-lighter);
   font-family: 'Poppins', sans-serif;
 }
+
+app-root {
+  flex: 1 0 auto;
+  margin-inline: 1rem;
+}
