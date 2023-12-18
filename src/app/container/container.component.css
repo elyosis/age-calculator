@@ -1,5 +1,5 @@
 .container {
   background-color: var(--color-neutral-lightest);
   padding: 3rem 1rem;
-  border-radius: 25px 25px 75px 25px;
+  border-radius: 25px 25px 100px 25px;
 }
