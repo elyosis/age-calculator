@@ -1,0 +1,23 @@
+.input-block {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-neutral-darker);
+}
+
+label {
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-block: .25rem;
+}
+
+input {
+  max-width: clamp(85px, 20vw, 120px);
+  border: solid 1px var(--color-neutral-medium);
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  height: 50px;
+  padding-left: 1rem;
+  color: var(--color-neutral-darkest)
+}

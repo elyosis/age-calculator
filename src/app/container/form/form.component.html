@@ -1,7 +1,22 @@
 <form [formGroup]="bdForm" (ngSubmit)="onSubmit(bdForm)">
-
-  <app-input [control]="bdForm.controls['day']"></app-input>
-  <app-input [control]="bdForm.controls['month']"></app-input>
-  <app-input [control]="bdForm.controls['year']"></app-input>
-  <button type="submit">Submit</button>
+  <div class="form-fields">
+    <app-input
+      [control]="bdForm.controls['day']"
+      name="day"
+      placeholder="DD"
+    ></app-input>
+    <app-input
+      [control]="bdForm.controls['month']"
+      name="month"
+      placeholder="MM"
+    ></app-input>
+    <app-input
+      [control]="bdForm.controls['year']"
+      name="year"
+      placeholder="YYYY"
+    ></app-input>
+  </div>
+  <div class="separator">
+    <button type="submit"><img src="../../../assets/icon-arrow.svg" alt="" srcset=""></button>
+  </div>
 </form>

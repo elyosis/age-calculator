@@ -6,5 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
-@Input() control!: any;
+  @Input() control!: any;
+  @Input() name!: string;
+  @Input() placeholder!: string;
 }

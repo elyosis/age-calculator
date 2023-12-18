@@ -1,0 +1,32 @@
+.form-fields {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.separator {
+  height: 2px;
+  width: 100%;
+  position: relative;
+  background-color: var(--color-neutral-lighter);
+  margin-block: 4rem;
+}
+
+button {
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 2rem);
+  left: calc(50% - 2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary-dark);
+  cursor: pointer;
+}
+
+button > img {
+  height: 1.7rem;
+}
