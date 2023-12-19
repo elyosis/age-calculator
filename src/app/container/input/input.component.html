@@ -1,9 +1,29 @@
 <div class="input-block">
-  <label [for]="name">{{ name | uppercase }}</label>
+  <label [class.invalid]="(control.invalid || formWideError) && control.touched" [for]="name">{{ name | uppercase }}</label>
   <input
     type="text"
     [name]="name"
     [placeholder]="placeholder"
     [formControl]="control"
+    [class.invalid]="formWideError"
   />
+  <div *ngIf="control.invalid && control.touched">
+    <p *ngIf="control.errors?.['required']">This field is required</p>
+    <p
+      *ngIf="name === 'day' && (control.errors?.['minlength'] || control.errors?.['maxlength'] || control.errors?.['min'] || control.errors?.['max']) && !control.errors?.['pattern']"
+    >
+      Must be a valid day
+    </p>
+    <p
+      *ngIf="name === 'month' && (control.errors?.['minlength'] || control.errors?.['maxlength'] || control.errors?.['min'] || control.errors?.['max']) && !control.errors?.['pattern']"
+    >
+      Must be a valid month
+    </p>
+    <p
+      *ngIf="name === 'year' && (control.errors?.['minlength'] || control.errors?.['maxlength'] || control.errors?.['min']) && !control.errors?.['pattern']"
+    >
+      Must be a valid year
+    </p>
+    <p *ngIf="control.errors?.['pattern']">Must be a number</p>
+  </div>
 </div>

@@ -29,3 +29,19 @@ button {
 button > img {
   height: 1.7rem;
 }
+
+p {
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-primary-light);
+}
+
+.invalid > label {
+  color: var(--color-primary-light);
+}
+
+.invalid > input {
+  border-color: var(--color-primary-light);
+}

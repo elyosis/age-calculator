@@ -10,14 +10,32 @@ label {
   margin-block: .25rem;
 }
 
+label.invalid,
+p {
+  color: var(--color-primary-light);
+}
+
 input {
   max-width: clamp(85px, 20vw, 120px);
   border: solid 1px var(--color-neutral-medium);
   border-radius: 10px;
+  outline: none;
   font-size: 20px;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   height: 50px;
   padding-left: 1rem;
-  color: var(--color-neutral-darkest)
+  color: var(--color-neutral-darkest);
+}
+
+input.ng-invalid.ng-touched,
+input.invalid {
+  border-color: var(--color-primary-light);
+} 
+
+p {
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 400;
+  font-style: italic;
 }

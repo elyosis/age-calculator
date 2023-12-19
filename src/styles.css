@@ -34,4 +34,5 @@ body {
 app-root {
   flex: 1 0 auto;
   margin-inline: 1rem;
+  max-width: 90%;
 }

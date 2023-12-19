@@ -4,19 +4,49 @@
       [control]="bdForm.controls['day']"
       name="day"
       placeholder="DD"
+      [formWideError]="
+        bdForm.controls['day'].touched &&
+        bdForm.controls['month'].touched &&
+        bdForm.controls['year'].touched &&
+        (bdForm.errors?.['invalidDate'] || bdForm.errors?.['futureDate'])
+      "
     ></app-input>
     <app-input
       [control]="bdForm.controls['month']"
       name="month"
       placeholder="MM"
+      [formWideError]="
+        bdForm.controls['day'].touched &&
+        bdForm.controls['month'].touched &&
+        bdForm.controls['year'].touched &&
+        (bdForm.errors?.['invalidDate'] || bdForm.errors?.['futureDate'])
+      "
     ></app-input>
     <app-input
       [control]="bdForm.controls['year']"
       name="year"
       placeholder="YYYY"
+      [formWideError]="
+        bdForm.controls['day'].touched &&
+        bdForm.controls['month'].touched &&
+        bdForm.controls['year'].touched &&
+        (bdForm.errors?.['invalidDate'] || bdForm.errors?.['futureDate'])
+      "
     ></app-input>
   </div>
+  <div
+    *ngIf="
+      bdForm.controls['day'].touched &&
+      bdForm.controls['month'].touched &&
+      bdForm.controls['year'].touched
+    "
+  >
+    <p *ngIf="bdForm.errors?.['invalidDate']">Must be a valid date</p>
+    <p *ngIf="bdForm.errors?.['futureDate']">Must be in the past</p>
+  </div>
   <div class="separator">
-    <button type="submit"><img src="../../../assets/icon-arrow.svg" alt="" srcset=""></button>
+    <button type="submit">
+      <img src="../../../assets/icon-arrow.svg" alt="" srcset="" />
+    </button>
   </div>
 </form>

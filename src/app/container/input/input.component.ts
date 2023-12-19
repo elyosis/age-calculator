@@ -9,4 +9,5 @@ export class InputComponent {
   @Input() control!: any;
   @Input() name!: string;
   @Input() placeholder!: string;
+  @Input() formWideError?: boolean;
 }
