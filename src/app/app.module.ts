@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component';
 import { InputComponent } from './container/input/input.component';
 import { FormComponent } from './container/form/form.component';
+import { DisplayComponent } from './container/display/display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
     InputComponent,
-    FormComponent
+    FormComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule
