@@ -1,31 +1,17 @@
 <form [formGroup]="bdForm" (ngSubmit)="onSubmit(bdForm)">
   <div class="form-fields">
     <app-input
-      [control]="bdForm.controls['day']"
-      name="day"
-      placeholder="DD"
-      [formWideError]="
-        bdForm.controls['day'].touched &&
-        bdForm.controls['month'].touched &&
-        bdForm.controls['year'].touched &&
-        (bdForm.errors?.['invalidDate'] || bdForm.errors?.['futureDate'])
+      *ngFor="
+        let input
+        of [
+          ['day', 'DD'],
+          ['month', 'MM'],
+          ['year', 'YYYY']
+        ]
       "
-    ></app-input>
-    <app-input
-      [control]="bdForm.controls['month']"
-      name="month"
-      placeholder="MM"
-      [formWideError]="
-        bdForm.controls['day'].touched &&
-        bdForm.controls['month'].touched &&
-        bdForm.controls['year'].touched &&
-        (bdForm.errors?.['invalidDate'] || bdForm.errors?.['futureDate'])
-      "
-    ></app-input>
-    <app-input
-      [control]="bdForm.controls['year']"
-      name="year"
-      placeholder="YYYY"
+      [control]="bdForm.controls[input[0]]"
+      [name]="input[0]"
+      [placeholder]="input[1]"
       [formWideError]="
         bdForm.controls['day'].touched &&
         bdForm.controls['month'].touched &&
