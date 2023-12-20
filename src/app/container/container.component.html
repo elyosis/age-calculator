@@ -1,4 +1,4 @@
 <div class="container">
-  <app-form></app-form>
-  <app-display></app-display>
+  <app-form (submission)="submissionListener($event)"></app-form>
+  <app-display [results]="calculation"></app-display>
 </div>
