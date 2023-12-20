@@ -1,4 +1,6 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { FormData } from '../FormData';
+import { CalculatorService } from '../calculator.service';
 
 @Component({
   selector: 'app-container',
@@ -7,8 +9,17 @@ import { Component} from '@angular/core';
 })
 export class ContainerComponent {
 
-  /* TODO: this component will take the form info
-  and use a service to do the calculation
-  and then pass the results to the display component */
-  
+  currentDate: Date = new Date();
+  birthdate: Date | null = null;
+  calculation: string[] = ["--", "--", "--"];
+
+  constructor(private calcService: CalculatorService) {}
+
+  submissionListener(event: FormData): void {
+    this.birthdate = new Date(`${event.year}-${event.month}-${event.day}`);
+
+    this.calculation[0] = this.calcService.getYears(this.birthdate, this.currentDate);
+    this.calculation[1] = this.calcService.getMonths(this.birthdate, this.currentDate);
+    this.calculation[2] = this.calcService.getDays(this.birthdate, this.currentDate);
+  }
 }
