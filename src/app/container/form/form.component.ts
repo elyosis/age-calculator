@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,8 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators }
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
-
+  
+  @Output() submission = new EventEmitter();
 
   bdForm: FormGroup = this.fb.group({
     day: ["", [Validators.required, Validators.pattern(/^\d+$/), Validators.min(1), Validators.max(31), Validators.minLength(2), Validators.maxLength(2)]],
@@ -23,11 +24,8 @@ export class FormComponent {
     if (this.bdForm.status === "INVALID") {
       return;
     } else {
-      console.log("Submitted");
+      this.submission.emit(form.value);
     }
-    /* TODO: once validated, data should be passed
-      up to the container through an event emitter  
-      */
   }
 
   validDateValidator(control: AbstractControl): ValidationErrors | null {
