@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
 
 :root {
   --color-primary-light: hsl(0, 100%, 67%);
   --color-primary-dark: hsl(259, 100%, 65%);
 
   --color-neutral-lightest: hsl(0, 0%, 100%);
-  --color-neutral-lighter:  hsl(0, 0%, 94%);
+  --color-neutral-lighter: hsl(0, 0%, 94%);
   --color-neutral-medium: hsl(0, 0%, 86%);
   --color-neutral-darker: hsl(0, 1%, 44%);
   --color-neutral-darkest: hsl(0, 0%, 8%);
@@ -28,11 +28,18 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--color-neutral-lighter);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 app-root {
   flex: 1 0 auto;
   margin-inline: 1rem;
   max-width: 90%;
+}
+
+@media (min-width: 835px) {
+  app-root {
+    flex: 0 1 auto;
+    width: 750px;
+  }
 }

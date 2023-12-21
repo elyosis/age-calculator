@@ -8,3 +8,9 @@
 .accented {
   color: var(--color-primary-dark);
 }
+
+@media (min-width: 835px) {
+  .display-text {
+    font-size: 6rem;
+  }
+}

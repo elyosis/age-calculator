@@ -12,13 +12,13 @@
 }
 
 button {
-  height: 4rem;
-  width: 4rem;
+  height: 6rem;
+  width: 6rem;
   border: none;
   border-radius: 50%;
   position: absolute;
-  top: calc(50% - 2rem);
-  left: calc(50% - 2rem);
+  top: calc(50% - 3rem);
+  left: calc(50% - 3rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +27,7 @@ button {
 }
 
 button > img {
-  height: 1.7rem;
+  height: 2.5rem;
 }
 
 p {
@@ -44,4 +44,21 @@ p {
 
 .invalid > input {
   border-color: var(--color-primary-light);
+}
+
+@media (min-width: 835px) {
+  .form-fields {
+    grid-template-columns: repeat(2, minmax(min-content, 150px)) 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .separator {
+    margin-block: 2.5rem 3rem;
+  }
+
+  button {
+    left: auto;
+    right: 0;
+  }
 }

@@ -1,5 +1,11 @@
 .container {
   background-color: var(--color-neutral-lightest);
   padding: 3rem 1.5rem;
-  border-radius: 25px 25px 100px 25px;
+  border-radius: 25px 25px 200px 25px;
+}
+
+@media (min-width: 835px) {
+  .container {
+    padding: 3rem;
+  }
 }
