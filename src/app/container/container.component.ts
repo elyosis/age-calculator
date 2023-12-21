@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormData } from '../FormData';
+import { FormData } from '../utils/FormData';
+import { resultsLoader } from '../utils/resultsLoader';
 import { CalculatorService } from '../calculator.service';
 
 @Component({
@@ -11,15 +12,19 @@ export class ContainerComponent {
 
   currentDate: Date = new Date();
   birthdate: Date | null = null;
-  calculation: string[] = ["--", "--", "--"];
+  calculation: string[]|number[] = ["--", "--", "--"];
 
   constructor(private calcService: CalculatorService) {}
 
   submissionListener(event: FormData): void {
     this.birthdate = new Date(`${event.year}-${event.month}-${event.day}`);
 
-    this.calculation[0] = this.calcService.getYears(this.birthdate, this.currentDate);
-    this.calculation[1] = this.calcService.getMonths(this.birthdate, this.currentDate);
-    this.calculation[2] = this.calcService.getDays(this.birthdate, this.currentDate);
+    const years = this.calcService.getYears(this.birthdate, this.currentDate);
+    const months = this.calcService.getMonths(this.birthdate, this.currentDate);
+    const days = this.calcService.getDays(this.birthdate, this.currentDate);
+
+    resultsLoader(this, years, 0);
+    resultsLoader(this, months, 1);
+    resultsLoader(this, days, 2);
   }
 }

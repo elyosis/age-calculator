@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent {
-  @Input() results!: string[];
+  @Input() results!: string[]|number[];
 
 }

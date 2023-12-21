@@ -15,7 +15,7 @@ export class CalculatorService {
       years--;
     }
 
-    return years.toString();
+    return years;
   }
 
   getMonths(birthdate: Date, today: Date) {
@@ -41,7 +41,7 @@ export class CalculatorService {
       if (months === -1) months = 11;
     }
 
-    return months.toString();
+    return months;
   }
 
   getDays(birthdate: Date, today: Date) {
@@ -60,7 +60,7 @@ export class CalculatorService {
       days = daysInPastMonth + currentDay - pastDay;
     }
 
-    return days.toString();
+    return days;
   }
 
 }
