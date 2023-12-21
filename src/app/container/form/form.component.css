@@ -24,6 +24,13 @@ button {
   align-items: center;
   background-color: var(--color-primary-dark);
   cursor: pointer;
+  outline: none;
+}
+
+button:hover,
+button:focus,
+button:active {
+  background-color: var(--color-neutral-darkest);
 }
 
 button > img {
@@ -60,5 +67,9 @@ p {
   button {
     left: auto;
     right: 0;
+  }
+
+  button > img {
+    height: 2.75rem;
   }
 }

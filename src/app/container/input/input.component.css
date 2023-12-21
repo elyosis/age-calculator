@@ -28,6 +28,11 @@ input {
   color: var(--color-neutral-darkest);
 }
 
+input:focus,
+input:active {
+  border-color: var(--color-primary-dark);
+}
+
 input.ng-invalid.ng-touched,
 input.invalid {
   border-color: var(--color-primary-light);
